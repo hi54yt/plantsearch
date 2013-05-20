@@ -1,0 +1,58 @@
+zh-CN:
+  activerecord:
+    models:
+      plant: "植物信息"
+    attributes:
+      plant:
+        zw:            "中文"
+        ldm:           "拉丁名"
+        cdxzzb:        "场地限制指标（乔灌草）"
+        cl:            "常绿/落叶"
+        xzd:           "显著度"
+        zygsbw:        "主要观赏部位"
+        sd:            "色调"
+        flsgsq:        "非绿色赏期"
+        
+        zhstfwqlpx:    "综合生态服务潜力排序"
+        jwzs:          "降温增湿"
+        gtsy:          "固碳释氧"
+        zc:            "滞尘"
+        hjwr:          "缓解污染"
+        bctr:          "保持土壤"
+        
+        yzxx:          "引种信息"
+        gsydj:         "光适应等级"
+        trsfsyxdj:     "土壤水分适应性等级"
+        phmin:         "PH最小值"
+        phmax:         "PH最大值"
+        apmin:         "AP最小值（mg/kg）"
+        apmax:         "AP最大值（mg/kg）"
+        akmin:         "AK最小值（mg/kg）"
+        akmax:         "AK最大值（mg/kg）"
+        tnmin:         "TN最小值（g/kg）"
+        tnmax:         "TN最大值（g/kg）"
+        socmin:        "SOC最小值（g/kg）"
+        socmax:        "SOC最大值（g/kg）"
+        sbdmin:        "SBD最小值（g/cm3）"
+        sbdmax:        "SBD最大值（g/cm3）"
+        
+        sfjdx:         "是否具毒性"
+        sfjhfzmx:      "是否具花粉致敏性"
+        sfjc:          "是否具刺"
+        
+        ke:            "科"
+        shu:           "属"
+        bjzwzym:       "《北京植物志》页码"
+        zysj:          "主要生境"
+        gss:           "观赏色"
+        yjlyqy:        "引种来源区域"
+        kdzg:          "可达株高"
+        zysq:          "主要赏期"
+        
+  meta_search:
+    predicates:
+      equals: "%{attribute}"
+      contains: "%{attribute}"
+    attributes:
+      plant:
+         zw_contains: "中文"

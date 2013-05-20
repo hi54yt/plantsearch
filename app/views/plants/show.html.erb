@@ -1,0 +1,110 @@
+<%- model_class = Plant -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<table class="table table-bordered">
+	<tr>
+		<td>中文</td>
+		<td><%= @plant.zw %></td>
+	</tr>
+	<tr>
+		<td>拉丁文</td>
+		<td><%= @plant.ldm %></td>
+	</tr>
+	<tr>
+		<td>rqzw</td>
+		<td><%= @plant.rqzw %></td>
+	</tr>
+	<tr>
+		<td>ke</td>
+		<td><%= @plant.ke %></td>
+	</tr>
+	<tr>
+		<td>shu</td>
+		<td><%= @plant.shu %></td>
+	</tr>
+	<tr>
+		<td>zwzym</td>
+		<td><%= @plant.zwzym %></td>
+	</tr>
+	<tr>
+		<td>stsyx</td>
+		<td><%= @plant.stsyx %></td>
+	</tr>
+	
+</table>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:zw) %>:</strong></dt>
+  <dd><%= @plant.zw %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ldm) %>:</strong></dt>
+  <dd><%= @plant.ldm %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:rqzw) %>:</strong></dt>
+  <dd><%= @plant.rqzw %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ke) %>:</strong></dt>
+  <dd><%= @plant.ke %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:shu) %>:</strong></dt>
+  <dd><%= @plant.shu %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:zwzym) %>:</strong></dt>
+  <dd><%= @plant.zwzym %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:stsyx) %>:</strong></dt>
+  <dd><%= @plant.stsyx %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:gsyxdj) %>:</strong></dt>
+  <dd><%= @plant.gsyxdj %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cdxzzb) %>:</strong></dt>
+  <dd><%= @plant.cdxzzb %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:stfwzhql) %>:</strong></dt>
+  <dd><%= @plant.stfwzhql %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:jwzsql) %>:</strong></dt>
+  <dd><%= @plant.jwzsql %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:gtsyql) %>:</strong></dt>
+  <dd><%= @plant.gtsyql %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:zcql) %>:</strong></dt>
+  <dd><%= @plant.zcql %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:kxso) %>:</strong></dt>
+  <dd><%= @plant.kxso %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:xkcl) %>:</strong></dt>
+  <dd><%= @plant.xkcl %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:kxfhw) %>:</strong></dt>
+  <dd><%= @plant.kxfhw %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:kxo) %>:</strong></dt>
+  <dd><%= @plant.kxo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:kxzjs) %>:</strong></dt>
+  <dd><%= @plant.kxzjs %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:kxyj) %>:</strong></dt>
+  <dd><%= @plant.kxyj %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:gjql) %>:</strong></dt>
+  <dd><%= @plant.gjql %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cl) %>:</strong></dt>
+  <dd><%= @plant.cl %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:xzd) %>:</strong></dt>
+  <dd><%= @plant.xzd %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:gsbw) %>:</strong></dt>
+  <dd><%= @plant.gsbw %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:gssx) %>:</strong></dt>
+  <dd><%= @plant.gssx %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:gsq) %>:</strong></dt>
+  <dd><%= @plant.gsq %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:zzgd) %>:</strong></dt>
+  <dd><%= @plant.zzgd %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:jdsz) %>:</strong></dt>
+  <dd><%= @plant.jdsz %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:zrfbqk) %>:</strong></dt>
+  <dd><%= @plant.zrfbqk %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:dx) %>:</strong></dt>
+  <dd><%= @plant.dx %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:vocpflgwz) %>:</strong></dt>
+  <dd><%= @plant.vocpflgwz %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              plants_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_plant_path(@plant), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              plant_path(@plant),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>

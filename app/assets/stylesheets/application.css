@@ -1,0 +1,63 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+body { 
+  padding-bottom: 30px;
+  background-color: #eee;
+  font-family: "Helvetica Neue",Helvetica,"Heiti SC","Segoe UI","Microsoft YaHei",Arial,sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  width: 940px;
+  background: #FFF;
+  padding: 40px 40px 20px 40px;
+  
+  margin: 0;
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  border: 1px solid #ddd;
+  border-top: 0 none;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.table thead {
+background-color: #f7f7f7;
+background-image: -moz-linear-gradient(top, #fff, #ebebeb);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#ebebeb));
+background-image: -webkit-linear-gradient(top, #fff, #ebebeb);
+background-image: -o-linear-gradient(top, #fff, #ebebeb);
+background-image: linear-gradient(to bottom, #fff, #ebebeb);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEBEBEB', GradientType=0);
+}
+
+.title-divider {
+margin-bottom: 20px;
+background: transparent url("http://vpncloud-asset.b0.upaiyun.com/assets/admin/title_divider.png") repeat-x 0 0;
+}
+
+
+
+.title-divider span {
+color: #00adf2;
+padding-right: 20px;
+background: white;
+}
