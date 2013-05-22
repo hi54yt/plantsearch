@@ -4,7 +4,6 @@ class Plant < ActiveRecord::Base
   def self.import(file)
   	spreadsheet = open_spreadsheet(file)
   	header = spreadsheet.row(1)
-    binding.pry
   	(3..spreadsheet.last_row).each do |i|
       spreadsheet.row(i).each do |cell|
         cell.to_i if cell.is_a?(Float)
