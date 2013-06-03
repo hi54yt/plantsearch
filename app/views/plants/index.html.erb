@@ -108,13 +108,13 @@
   <legend>是否需排除</legend>
   <div class="row-fluid">
     <div class="span4">
-    <%= f.input :sfjdx_equals, priority: [ "有毒" ], :collection=>[['是','有毒'],['否','']], :as=>"radio", :item_wrapper_class => 'inline' %>
+    <%= f.input :sfjdx_equals, :collection=>[['是','有毒'],['否','']], :as=>"radio_buttons", :item_wrapper_class => 'inline', :checked => '有毒' %>
     </div>
     <div class="span4">
-    <%= f.input :sfjhfzmx_equals, :collection=>[['是',1],['否','']], :as=>"radio", :item_wrapper_class => 'inline' %>
+    <%= f.input :sfjhfzmx_equals, :collection=>[['是',1],['否','']], :as=>"radio_buttons", :item_wrapper_class => 'inline' %>
     </div>
     <div class="span4">
-    <%= f.input :sfjc_equals, :collection=>[['是',1],['否','']], :as=>"radio", :item_wrapper_class => 'inline' %>
+    <%= f.input :sfjc_equals, :collection=>[['是',1],['否','']], :as=>"radio_buttons", :item_wrapper_class => 'inline' %>
     </div>
   </div>
   
