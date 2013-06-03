@@ -12,12 +12,18 @@
  *= require_tree .
  */
 body { 
+  padding-top: 40px;
   padding-bottom: 30px;
   background-color: #eee;
   font-family: "Helvetica Neue",Helvetica,"Heiti SC","Segoe UI","Microsoft YaHei",Arial,sans-serif;
   font-size: 14px;
   line-height: 20px;
   color: #333;
+}
+
+.header-container {
+  width: 940px;
+  padding-left: 170px;
 }
 
 .container {

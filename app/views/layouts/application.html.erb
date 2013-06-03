@@ -8,6 +8,28 @@
 </head>
 <body>
 
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="header-container">
+      <%= link_to "首页", root_path, class: :brand %>
+      <ul class="nav">
+<!--         <li>
+          <%= link_to "Posts" %>
+        </li>
+        <li>
+          <%= link_to "Categories" %>
+        </li> -->
+        
+      </ul>
+      <ul class="nav pull-right">
+          <li>
+            <%= link_to "数据导入", import_index_path %>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <%= yield %>
 
 </body>

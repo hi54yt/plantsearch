@@ -50,7 +50,7 @@ class PlantsController < ApplicationController
   # 重置查询条件
   def reset_search_condition
     respond_to do |format|
-      format.js { render :index }
+      format.js
     end
   end
 end

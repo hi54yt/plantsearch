@@ -2,6 +2,8 @@ Plantsearch::Application.routes.draw do
   resources :plants do
     collection { post :import }
   end
+
+  resources :import
   root :to => 'plants#index'
 
   # 重置查询条件
@@ -9,6 +11,7 @@ Plantsearch::Application.routes.draw do
 
   post 'search' => 'plants#index'
 
+  get 'delete' => 'import#destroy', :as => 'delete'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
