@@ -1,8 +1,12 @@
 # coding: utf-8
 class PlantsController < ApplicationController
   def index
-    @search = Plant.search params[:search]
-    @plants = @search.page params[:page]
+    if params[:search] != nil
+      @search = Plant.search params[:search]
+      @plants = @search.page params[:page]
+    else
+      @search = Plant.search params[:search]
+    end
   end
   
   def show
