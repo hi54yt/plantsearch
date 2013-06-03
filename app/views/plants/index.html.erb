@@ -10,7 +10,7 @@
   </h3>
 
   
-  <%= simple_form_for @search, :url => plants_path, :method => 'get' do |f| %>
+  <%= simple_form_for @search, :url => search_url, :method => 'post' do |f| %>
   <div class="row-fluid">
     <div class="span4">
     <%= f.input :zw_contains %>
@@ -40,14 +40,14 @@
     <%= f.input :kdzg_equals, :collection => Plant.select(:kdzg).where("kdzg != ''").uniq, :value_method => :kdzg, :label_method => :kdzg, :include_blank => '全部' %>
     </div>
     <div class="span4">
-    <%= f.input :flsgsq_equals, :collection => Plant.select(:flsgsq).where("flsgsq != ''").uniq, :value_method => :flsgsq, :label_method => :flsgsq, :include_blank => '全部' %>
+    <%= f.input :flsgsqs_month_equals, :collection => Plant.flsgsq_lists, :include_blank => '全部' %>
     </div>
   </div>
   
   <legend>服务性指标</legend>
   <div class="row-fluid">
     <div class="span4">
-    <%= f.input :zhstfwqlpx_equals, :collection => Plant.select(:zhstfwqlpx).where("zhstfwqlpx != ''").uniq, :value_method => :zhstfwqlpx, :label_method => :zhstfwqlpx, :include_blank => '全部' %>
+    <%= f.input :zhstfwqlpx_range, :collection => Plant.zhstfwqlpx_lists, :include_blank => '全部' %>
     </div>
     <div class="span4">
     <%= f.input :jwzs_equals, :collection => Plant.select(:jwzs).where("jwzs != ''").uniq, :value_method => :jwzs, :label_method => :jwzs, :include_blank => '全部' %>
@@ -58,7 +58,7 @@
   </div>
   <div class="row-fluid">
     <div class="span4">
-    <%= f.input :zc_equals, :collection => Plant.select(:zc).where("zc != ''").uniq, :value_method => :zc, :label_method => :zc, :include_blank => '全部' %>
+    <%= f.input :zc_range, :collection => Plant.zc_lists, :include_blank => '全部' %>
     </div>
     <div class="span4">
     <%= f.input :hjwr_equals, :collection => Plant.select(:hjwr).where("hjwr != ''").uniq, :value_method => :hjwr, :label_method => :hjwr, :include_blank => '全部' %>
@@ -74,41 +74,41 @@
     <%= f.input :yzxx_equals, :collection => Plant.select(:yzxx).where("yzxx != ''").uniq, :value_method => :yzxx, :label_method => :yzxx, :include_blank => '全部' %>
     </div>
     <div class="span4">
-    <%= f.input :gsydj_equals, :collection => Plant.select(:gsydj).where("gsydj != ''").uniq, :value_method => :gsydj, :label_method => :gsydj, :include_blank => '全部' %>
+    <%= f.input :gsydjs_level_equals, :collection => Plant.gsydj_lists, :include_blank => '全部' %>
     </div>
     <div class="span4">
-    <%= f.input :trsfsyxdj_equals, :collection => Plant.select(:trsfsyxdj).where("trsfsyxdj != ''").uniq, :value_method => :trsfsyxdj, :label_method => :trsfsyxdj, :include_blank => '全部' %>
-    </div>
-  </div>
-  
-  <div class="row-fluid">
-    <div class="span4">
-    <%= f.input :akmin_equals %>
-    </div>
-    <div class="span4">
-    <%= f.input :apmin_equals %>
-    </div>
-    <div class="span4">
-    <%= f.input :socmin_equals %>
+    <%= f.input :trsfsyxdjs_level_equals, :collection => Plant.trsfsyxdj_lists, :include_blank => '全部' %>
     </div>
   </div>
   
   <div class="row-fluid">
     <div class="span4">
-    <%= f.input :tnmin_equals %>
+    <%= f.input :ak_between %>
     </div>
     <div class="span4">
-    <%= f.input :phmin_equals %>
+    <%= f.input :ap_between %>
     </div>
     <div class="span4">
-    <%= f.input :sbdmin_equals %>
+    <%= f.input :soc_between %>
+    </div>
+  </div>
+  
+  <div class="row-fluid">
+    <div class="span4">
+    <%= f.input :tn_between %>
+    </div>
+    <div class="span4">
+    <%= f.input :ph_between %>
+    </div>
+    <div class="span4">
+    <%= f.input :sbd_between %>
     </div>
   </div>
   
   <legend>是否需排除</legend>
   <div class="row-fluid">
     <div class="span4">
-    <%= f.input :sfjdx_equals, :collection=>[['是','有毒'],['否','']], :as=>"radio", :item_wrapper_class => 'inline' %>
+    <%= f.input :sfjdx_equals, :collection=>[['是','有毒'],['否','']], :as=>"radio", :item_wrapper_class => 'inline', :checked => '有毒' %>
     </div>
     <div class="span4">
     <%= f.input :sfjhfzmx_equals, :collection=>[['是',1],['否','']], :as=>"radio", :item_wrapper_class => 'inline' %>
@@ -121,7 +121,10 @@
     <!-- <div class="row-fluid">
     <%= f.input :ke_equals, :collection => Plant.select(:ke).where("ke != ''").uniq, :value_method => :ke, :include_blank => '全部' %>
     </div> -->
-    <%= submit_tag "查询", :name => nil %>
+    <div id="search">
+      <%= submit_tag "查询", :name => nil, :class => 'btn btn-success' %>
+      <%= link_to "重置", reset_search_condition_path, :class => 'btn', :remote => true %>
+    </div>
   <% end %>
   
   <% if @plants.present? %>
@@ -181,12 +184,12 @@
           <thead>
             <tr>
               <th><%= model_class.human_attribute_name(:zw) %></th>
-              <th><%= model_class.human_attribute_name(:zhstfwqlpx) %></th>
-              <th><%= model_class.human_attribute_name(:jwzs) %></th>
-              <th><%= model_class.human_attribute_name(:gtsy) %></th>
-              <th><%= model_class.human_attribute_name(:zc) %></th>
+              <th><%= sort_link @search, :zhstfwqlpx %></th>
+              <th><%= sort_link @search, :jwzs %></th>
+              <th><%= sort_link @search, :gtsy %></th>
+              <th><%= sort_link @search, :zc %></th>
               <th><%= model_class.human_attribute_name(:hjwr) %></th>
-              <th><%= model_class.human_attribute_name(:bctr) %></th>
+              <th><%= sort_link @search, :bctr %></th>
             </tr>
           </thead>
           <tbody>

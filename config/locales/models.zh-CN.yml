@@ -12,6 +12,7 @@ zh-CN:
         zygsbw:        "主要观赏部位"
         sd:            "色调"
         flsgsq:        "非绿色赏期"
+        flsgsqs_month: "非绿色赏期"
         
         zhstfwqlpx:    "综合生态服务潜力排序"
         jwzs:          "降温增湿"
@@ -22,7 +23,9 @@ zh-CN:
         
         yzxx:          "引种信息"
         gsydj:         "光适应等级"
+        gsydjs_level:  "光适应等级"
         trsfsyxdj:     "土壤水分适应性等级"
+        trsfsyxdjs_level: "土壤水分适应性等级"
         phmin:         "PH最小值"
         phmax:         "PH最大值"
         apmin:         "AP最小值（mg/kg）"
@@ -56,3 +59,11 @@ zh-CN:
     attributes:
       plant:
          zw_contains: "中文"
+         zhstfwqlpx_range: "综合生态服务潜力排序"
+         zc_range: "滞尘"
+         ak_between: "AK(mg/kg)"
+         ap_between: "AP(mg/kg)"
+         soc_between: "SOC(g/kg)"
+         tn_between: "TN(g/kg)"
+         ph_between: "PH"
+         sbd_between: "SBD(g/cm3)"

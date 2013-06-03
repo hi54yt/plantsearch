@@ -4,6 +4,11 @@ Plantsearch::Application.routes.draw do
   end
   root :to => 'plants#index'
 
+  # 重置查询条件
+  get 'reset_search_condition' => 'plants#reset_search_condition', :as => 'reset_search_condition'
+
+  post 'search' => 'plants#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

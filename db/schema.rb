@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130416080628) do
+ActiveRecord::Schema.define(:version => 20130603135407) do
+
+  create_table "flsgsqs", :force => true do |t|
+    t.integer  "plant_id"
+    t.string   "month"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "gsydjs", :force => true do |t|
+    t.integer  "plant_id"
+    t.string   "level"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "plants", :force => true do |t|
     t.integer  "code"
@@ -55,6 +69,13 @@ ActiveRecord::Schema.define(:version => 20130416080628) do
     t.string   "yjlyqy"
     t.string   "kdzg"
     t.string   "zysq"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "trsfsyxdjs", :force => true do |t|
+    t.integer  "plant_id"
+    t.string   "level"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

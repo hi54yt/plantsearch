@@ -46,4 +46,11 @@ class PlantsController < ApplicationController
     Plant.import(params[:file])
     redirect_to root_url, notice: "导入成功。"
   end
+
+  # 重置查询条件
+  def reset_search_condition
+    respond_to do |format|
+      format.js { render :index }
+    end
+  end
 end
