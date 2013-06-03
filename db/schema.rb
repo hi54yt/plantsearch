@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130603135407) do
+ActiveRecord::Schema.define(:version => 20130603185251) do
 
   create_table "flsgsqs", :force => true do |t|
     t.integer  "plant_id"
@@ -37,12 +37,7 @@ ActiveRecord::Schema.define(:version => 20130603135407) do
     t.string   "zygsbw"
     t.string   "sd"
     t.string   "flsgsq"
-    t.string   "zhstfwqlpx"
-    t.string   "jwzs"
-    t.string   "gtsy"
-    t.string   "zc"
     t.string   "hjwr"
-    t.string   "bctr"
     t.string   "yzxx"
     t.string   "gsydj"
     t.string   "trsfsyxdj"
@@ -71,6 +66,11 @@ ActiveRecord::Schema.define(:version => 20130603135407) do
     t.string   "zysq"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "zhstfwqlpx"
+    t.integer  "jwzs"
+    t.integer  "gtsy"
+    t.integer  "zc"
+    t.integer  "bctr"
   end
 
   create_table "trsfsyxdjs", :force => true do |t|

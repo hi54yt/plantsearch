@@ -27,6 +27,13 @@ class Plant < ActiveRecord::Base
       row["flsgsq"] = row["flsgsq"].to_i.to_s if row["flsgsq"].is_a?(Float)
       row["gsydj"] = row["gsydj"].to_i.to_s if row["gsydj"].is_a?(Float)
       row["trsfsyxdj"] = row["trsfsyxdj"].to_i.to_s if row["trsfsyxdj"].is_a?(Float)
+
+      row["zhstfwqlpx"] = row["zhstfwqlpx"].to_i if row["zhstfwqlpx"].is_a?(Float)
+      row["jwzs"] = row["jwzs"].to_i if row["jwzs"].is_a?(Float)
+      row["gtsy"] = row["gtsy"].to_i if row["gtsy"].is_a?(Float)
+      row["zc"] = row["zc"].to_i if row["zc"].is_a?(Float)
+      row["bctr"] = row["bctr"].to_i if row["bctr"].is_a?(Float)
+
   		plant = find_by_zw(row["zw"]) || new
   		plant.attributes = row.to_hash.slice(*accessible_attributes)
   		plant.save!
@@ -74,6 +81,10 @@ class Plant < ActiveRecord::Base
   def self.zc_lists
     ['1-30', '30-70', '70-100']
   end
+
+  # def zhstfwqlpx
+  #   read_attribute(:zhstfwqlpx).to_i
+  # end
 
   # def self.import(file)
   #   spreadsheet = Spreadsheet.open file.path
